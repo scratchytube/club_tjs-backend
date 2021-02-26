@@ -10,6 +10,7 @@ api_data = JSON.parse(api_response)
 
 api_data.each do |recipe|
     Recipe.create!(
+        api_id: recipe["id"],
         title: recipe["title"],
         prep_time: recipe["prepTime"],
         cooking_time: recipe["cookingTime"],
@@ -17,10 +18,11 @@ api_data.each do |recipe|
         directions: recipe["directions"],
         image: recipe["img"],
         servings: recipe["serves"],
+
     )
 end
 
-binding.pry
+# binding.pry
 
 User.create!(
     name: "Brian",
