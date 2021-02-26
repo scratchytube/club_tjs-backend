@@ -1,4 +1,4 @@
-class RecipesController < ApplicationController
+class Api::V1::RecipesController < ApplicationController
     before_action :set_recipe, only: [:show]
 
     def index 

@@ -1,5 +1,5 @@
-class GoodsController < ApplicationController
-    before_action :set_goods, only [:show, :update, :delete]
+class Api::V1::GoodsController < ApplicationController
+    before_action :set_good, only: [:show, :update, :delete]
 
     def index 
         goods = Good.all 
@@ -30,11 +30,11 @@ class GoodsController < ApplicationController
 
     private
 
-    def set_goods 
+    def set_good
         @good = Good.find(params[:id])
     end
 
     def goods_params 
-        params.permit(:name. :image, :likes)
+        params.permit(:name, :image, :likes)
     end
 end

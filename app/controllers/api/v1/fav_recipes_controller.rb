@@ -1,4 +1,4 @@
-class FavRecipesController < ApplicationController
+class Api::V1::FavRecipesController < ApplicationController
     before_action :set_favRecipes, only: [:show, :update, :delete]
 
     def index 

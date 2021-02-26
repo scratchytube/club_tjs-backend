@@ -1,4 +1,4 @@
-class FavGoodsController < ApplicationController
+class Api::V1::FavGoodsController < ApplicationController
     before_action :set_favGoods, only: [:show, :update, :delete]
 
     def index 
