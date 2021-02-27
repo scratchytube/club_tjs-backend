@@ -1,6 +1,18 @@
 class Api::V1::UsersController < ApplicationController
     before_action :set_user, only: [:show, :update, :destroy]
 
+    # fake auth login
+    def login 
+        user = User.first
+        render json: user 
+    end
+
+    # fake auth autoLogin
+    def me 
+        user = User.first
+        render json: user 
+    end
+
     def index
         users = User.all 
         render json: users
