@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+    before_action :authenticate, only: [:me]
     before_action :set_user, only: [:show, :update, :destroy]
 
     # fake auth login
@@ -9,8 +10,7 @@ class Api::V1::UsersController < ApplicationController
 
     # fake auth autoLogin
     def me 
-        user = User.first
-        render json: user 
+        render json: @current_user 
     end
 
     def index
