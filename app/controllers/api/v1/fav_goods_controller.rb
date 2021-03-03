@@ -26,6 +26,12 @@ class Api::V1::FavGoodsController < ApplicationController
         render json: {message:"Bleep Bloop deleted!", fav_goodId:fav_goodId}
     end
 
+    # def destroy
+    #     trip = Trip.find(params[:id])
+    #     trip.destroy
+    #     render json: trip
+    # end
+
     private 
 
     def favGoods_params 
