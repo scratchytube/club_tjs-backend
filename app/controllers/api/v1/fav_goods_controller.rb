@@ -25,12 +25,6 @@ class Api::V1::FavGoodsController < ApplicationController
         render json: @fav_good
     end
 
-    #  def destroy
-    #     trip = Trip.find(params[:id])
-    #     trip.destroy
-    #     render json: trip
-    # end
-
     private 
 
     def favGoods_params 

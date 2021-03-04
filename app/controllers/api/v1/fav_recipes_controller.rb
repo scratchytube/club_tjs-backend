@@ -1,5 +1,5 @@
 class Api::V1::FavRecipesController < ApplicationController
-    before_action :set_favRecipes, only: [:show, :update, :delete]
+    before_action :set_favRecipes, only: [:show, :update, :destroy]
 
     def index 
         fav_recipes = FavRecipe.all 
@@ -20,10 +20,9 @@ class Api::V1::FavRecipesController < ApplicationController
         render json: @fav_recipe
     end
 
-    def destoy 
-        fav_RecipeId = @fav_recipe.id 
+    def destroy 
         @fav_recipe.destroy 
-        render json: {message:"pew pew its gone forever!", favRecipeId:favRecipeId}
+        render json: @fav_recipe
     end
 
 
