@@ -1,5 +1,5 @@
 class Api::V1::FavGoodsController < ApplicationController
-    before_action :set_favGoods, only: [:show, :update, :delete]
+    before_action :set_favGoods, only: [:show, :update, :destroy]
 
     def index 
         fav_goods = FavGood.all
@@ -21,12 +21,11 @@ class Api::V1::FavGoodsController < ApplicationController
     end
 
     def destroy 
-        fav_goodId = @fav_good.id 
         @fav_good.destroy 
-        render json: {message:"Bleep Bloop deleted!", fav_goodId:fav_goodId}
+        render json: @fav_good
     end
 
-    # def destroy
+    #  def destroy
     #     trip = Trip.find(params[:id])
     #     trip.destroy
     #     render json: trip
